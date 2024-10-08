@@ -1,0 +1,19 @@
+{
+  "name": "potluck-ui",
+  "private": true,
+  "workspaces": [
+    "src/components/*"
+  ],
+  "scripts": {
+    "build": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:build:*'",
+    "build:ladle": "ladle build",
+    "build:workspaces": "bun --filter '*' build",
+    "dev": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:dev:*'",
+    "dev:ladle": "ladle serve",
+    "dev:workspaces": "bun --filter '*' dev"
+  },
+  "devDependencies": {
+    "@ladle/react": "^4.1.1",
+    "concurrently": "^9.0.1"
+  }
+}

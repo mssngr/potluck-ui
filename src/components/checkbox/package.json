@@ -1,0 +1,25 @@
+{
+  "name": "@potluck-ui/checkbox",
+  "version": "0.0.1",
+  "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "build": "concurrently --kill-others -c black.bgWhite.bold --pad-prefix 'bun:build:*'",
+    "build:css": "panda cssgen --config ../../shared/panda.config.ts --minify",
+    "dev": "concurrently --kill-others -c black.bgWhite.bold --pad-prefix 'bun:dev:*'",
+    "dev:css": "panda --config ../../shared/panda.config.ts --watch",
+    "prepare": "panda --config ../../shared/panda.config.ts codegen"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.46.1",
+    "@types/bun": "latest",
+    "concurrently": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react-aria-components": "^1.4.0"
+  }
+}
