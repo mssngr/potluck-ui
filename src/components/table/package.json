@@ -4,8 +4,9 @@
   "type": "module",
   "module": "index.ts",
   "scripts": {
-    "build": "concurrently --kill-others -c black.bgWhite.bold --pad-prefix 'bun:build:*'",
-    "build:css": "panda cssgen --config ../../shared/panda.config.ts --minify",
+    "assemble": "concurrently --kill-others -c black.bgWhite.bold --pad-prefix 'bun:assemble:*'",
+    "assemble:css": "panda cssgen --config ../../shared/panda.config.ts --minify --outfile dist/table/styled-system/styles.css",
+    "assemble:js": "bun build src/components/table/index.ts --outdir dist/table",
     "dev": "concurrently --kill-others -c black.bgWhite.bold --pad-prefix 'bun:dev:*'",
     "dev:css": "panda --config ../../shared/panda.config.ts --watch",
     "prepare": "panda --config ../../shared/panda.config.ts codegen"

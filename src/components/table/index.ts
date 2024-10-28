@@ -1,2 +1,2 @@
 export { default } from './table'
-export * from './table'
+export type { TableProps } from './table.types'

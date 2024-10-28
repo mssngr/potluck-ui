@@ -5,9 +5,9 @@
     "src/components/*"
   ],
   "scripts": {
-    "build": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:build:*'",
-    "build:ladle": "ladle build",
-    "build:workspaces": "bun --filter '*' build",
+    "assemble": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:assemble:*'",
+    "assemble:ladle": "ladle build",
+    "assemble:workspaces": "bun --filter '*' assemble",
     "dev": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:dev:*'",
     "dev:ladle": "ladle serve",
     "dev:workspaces": "bun --filter '*' dev"
