@@ -1,19 +1,18 @@
 {
-  "name": "potluck-ui",
-  "private": true,
-  "workspaces": [
-    "src/components/*"
-  ],
-  "scripts": {
-    "assemble": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:assemble:*'",
-    "assemble:ladle": "ladle build",
-    "assemble:workspaces": "bun --filter '*' assemble",
-    "dev": "concurrently --kill-others -c white.bgBlue.bold,black.bgWhite.bold --pad-prefix 'bun:dev:*'",
-    "dev:ladle": "ladle serve",
-    "dev:workspaces": "bun --filter '*' dev"
-  },
-  "devDependencies": {
-    "@ladle/react": "^4.1.1",
-    "concurrently": "^9.0.1"
-  }
+	"name": "potluck-ui",
+	"private": true,
+	"workspaces": ["src/components/*"],
+	"scripts": {
+		"assemble": "concurrently --kill-others -c black.bgMagenta.bold,black.bgCyan.bold --pad-prefix 'bun:assemble:*'",
+		"assemble:ladle": "ladle build",
+		"assemble:workspaces": "bun --filter '*' assemble",
+		"dev": "concurrently --kill-others -c black.bgMagenta.bold,black.bgCyan.bold --pad-prefix 'bun:dev:*'",
+		"dev:ladle": "ladle serve",
+		"dev:workspaces": "bun --filter '*' dev"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@ladle/react": "^4.1.1",
+		"concurrently": "^9.0.1"
+	}
 }

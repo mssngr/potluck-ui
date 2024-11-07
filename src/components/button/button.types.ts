@@ -1,5 +1,5 @@
-import { type RecipeVariantProps } from './styled-system/css'
-import { buttonStyles } from './button.styles'
+import type { buttonStyles } from './button.styles'
+import type { RecipeVariantProps } from './styled-system/css'
 
 type ButtonBaseProps = {
   children: React.ReactNode

@@ -1,5 +1,4 @@
 import './styled-system/styles.css'
-
 import StyledButton from './button.styles'
 import type { ButtonProps, ButtonVariants } from './button.types'
 

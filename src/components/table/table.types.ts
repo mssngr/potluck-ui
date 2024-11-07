@@ -1,5 +1,5 @@
-import { type RecipeVariantProps } from './styled-system/css'
-import { tableHeaderStyles } from './table.styles'
+import type { RecipeVariantProps } from './styled-system/css'
+import type { tableHeaderStyles } from './table.styles'
 
 type TableBaseProps = {
   columns: Array<{ key: string; label: React.ReactNode }>

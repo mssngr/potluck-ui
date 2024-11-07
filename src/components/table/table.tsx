@@ -20,8 +20,8 @@ function getVisualVariant({
 
 export default function Table({ columns, data, sticky, ...props }: TableProps) {
   const orderedData = useMemo(
-    () => data.map((row) => columns.map(({ key }) => row[key])),
-    [data, columns]
+    () => data.map(row => columns.map(({ key }) => row[key])),
+    [data, columns],
   )
 
   return (
@@ -34,10 +34,10 @@ export default function Table({ columns, data, sticky, ...props }: TableProps) {
         ))}
       </StyledTableHeader>
       <StyledTableBody>
-        {orderedData.map((row, index) => (
-          <StyledRow key={`row-${index}`}>
-            {row.map((cell, index) => (
-              <StyledCell key={`cell-${index}`}>{cell}</StyledCell>
+        {orderedData.map(row => (
+          <StyledRow key={`row-${row[0]?.toString()}`}>
+            {row.map(cell => (
+              <StyledCell key={`cell-${cell?.toString()}`}>{cell}</StyledCell>
             ))}
           </StyledRow>
         ))}
