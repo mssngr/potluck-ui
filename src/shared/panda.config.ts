@@ -15,9 +15,14 @@ export default defineConfig({
   theme: {
     extend: {
       keyframes: {
-        buttonPop: {
-          '0%': { transform: 'scale(0.98)' },
-          '40%': { transform: 'scale(1.02)' },
+        buttonPress: {
+          '0%': { transform: 'scale(1)' },
+          '40%': { transform: 'scale(0.96)' },
+          '100%': { transform: 'scale(0.97)' },
+        },
+        buttonRelease: {
+          '0%': { transform: 'scale(0.97)' },
+          '40%': { transform: 'scale(1.03)' },
           '100%': { transform: 'scale(1)' },
         },
       },

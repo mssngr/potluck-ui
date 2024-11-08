@@ -1,5 +1,9 @@
 import './styled-system/styles.css'
-import StyledButton from './button.styles'
+import { useState } from 'react'
+import StyledButton, {
+  buttonPressStyles,
+  buttonReleaseStyles,
+} from './button.styles'
 import type { ButtonProps, ButtonVariants } from './button.types'
 
 function getVisualVariant({
@@ -30,8 +34,17 @@ export default function Button({
   lg,
   ...props
 }: ButtonProps) {
+  const [isPressed, setIsPressed] = useState(false)
+
+  function toggleIsPressed() {
+    setIsPressed(prev => !prev)
+  }
+
   return (
     <StyledButton
+      className={isPressed ? buttonPressStyles : buttonReleaseStyles}
+      onPressStart={toggleIsPressed}
+      onPressEnd={toggleIsPressed}
       {...getVisualVariant({ ghost, outline })}
       {...getSizeVariant({ sm, md, lg })}
       {...props}

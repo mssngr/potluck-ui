@@ -1,8 +1,8 @@
 import { Button } from 'react-aria-components'
-import { cva } from './styled-system/css'
+import { css, cva } from './styled-system/css'
 import { styled } from './styled-system/jsx'
 
-export const buttonStyles = cva({
+const buttonStyles = cva({
   base: {
     borderRadius: 'lg',
     boxShadow: '0 1px 2px 0 rgb(0 0 0 / 50%)',
@@ -16,15 +16,6 @@ export const buttonStyles = cva({
     // Hover
     transitionDuration: 'short',
     transitionProperty: 'filter',
-
-    // Click Animation
-    '@media (prefers-reduced-motion: no-preference)': {
-      animation: 'buttonPop 0.25s ease-out',
-    },
-    '&:active:hover, &:active:focus': {
-      animation: 'none',
-      transform: 'scale(0.97)',
-    },
   },
   variants: {
     visual: {
@@ -33,7 +24,7 @@ export const buttonStyles = cva({
         borderWidth: 'zero',
         color: 'var(--buttonTextColor, white)',
         _hover: {
-          filter: 'brightness(95%)',
+          filter: 'brightness(93%)',
         },
       },
       ghost: {
@@ -71,6 +62,22 @@ export const buttonStyles = cva({
     visual: 'default',
     size: 'md',
   },
+})
+
+export const buttonPressStyles = css({
+  '@media (prefers-reduced-motion: no-preference)': {
+    animation: 'buttonPress 0.25s ease-out',
+  },
+  animation: 'none',
+  transform: 'scale(0.97)',
+})
+
+export const buttonReleaseStyles = css({
+  '@media (prefers-reduced-motion: no-preference)': {
+    animation: 'buttonRelease 0.25s ease-out',
+  },
+  animation: 'none',
+  transform: 'scale(1)',
 })
 
 export default styled(Button, buttonStyles)
