@@ -1,9 +1,12 @@
+import type React from 'react'
 import type { buttonStyles } from './button.styles'
 import type { RecipeVariantProps } from './styled-system/css'
 
 type ButtonBaseProps = {
-  children: React.ReactNode
+  children?: React.ReactNode
   onPress: () => void
+  icon?: React.ReactNode
+  iconPosition?: 'left' | 'right'
 }
 
 // Visual Variants
@@ -27,17 +30,14 @@ type VisualButtonProps =
 // Size Variants
 type ButtonSmallProps = {
   sm: true
-  md?: false
   lg?: false
 }
 type ButtonMediumProps = {
   sm?: false
-  md?: true
   lg?: false
 }
 type ButtonLargeProps = {
   sm?: false
-  md?: false
   lg: true
 }
 type SizeButtonProps = ButtonSmallProps | ButtonMediumProps | ButtonLargeProps

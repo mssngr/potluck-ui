@@ -2,7 +2,7 @@ import { Button } from 'react-aria-components'
 import { css, cva } from './styled-system/css'
 import { styled } from './styled-system/jsx'
 
-const buttonStyles = cva({
+export const buttonStyles = cva({
   base: {
     borderRadius: 'lg',
     boxShadow: '0 1px 2px 0 rgb(0 0 0 / 50%)',
@@ -12,6 +12,14 @@ const buttonStyles = cva({
     outline: 'none',
     paddingX: 'sm',
     userSelect: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    // Icon margin
+    '& > *': {
+      _even: { marginLeft: 'xxs' },
+    },
 
     // Hover
     transitionDuration: 'short',
@@ -65,18 +73,22 @@ const buttonStyles = cva({
 })
 
 export const buttonPressStyles = css({
-  '@media (prefers-reduced-motion: no-preference)': {
+  _motionSafe: {
     animation: 'buttonPress 0.25s ease-out',
   },
-  animation: 'none',
+  _motionReduce: {
+    animation: 'none',
+  },
   transform: 'scale(0.97)',
 })
 
 export const buttonReleaseStyles = css({
-  '@media (prefers-reduced-motion: no-preference)': {
+  _motionSafe: {
     animation: 'buttonRelease 0.25s ease-out',
   },
-  animation: 'none',
+  _motionReduce: {
+    animation: 'none',
+  },
   transform: 'scale(1)',
 })
 

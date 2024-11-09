@@ -17,11 +17,9 @@ function getVisualVariant({
 
 function getSizeVariant({
   sm,
-  md,
   lg,
-}: Pick<ButtonProps, 'sm' | 'md' | 'lg'>): ButtonVariants {
+}: Pick<ButtonProps, 'sm' | 'lg'>): ButtonVariants {
   if (sm) return { size: 'sm' }
-  if (md) return { size: 'md' }
   if (lg) return { size: 'lg' }
   return {}
 }
@@ -30,8 +28,10 @@ export default function Button({
   ghost,
   outline,
   sm,
-  md,
   lg,
+  icon,
+  iconPosition = 'left',
+  children,
   ...props
 }: ButtonProps) {
   const [isPressed, setIsPressed] = useState(false)
@@ -46,8 +46,12 @@ export default function Button({
       onPressStart={toggleIsPressed}
       onPressEnd={toggleIsPressed}
       {...getVisualVariant({ ghost, outline })}
-      {...getSizeVariant({ sm, md, lg })}
+      {...getSizeVariant({ sm, lg })}
       {...props}
-    />
+    >
+      {iconPosition === 'left' && icon}
+      <span>{children}</span>
+      {iconPosition === 'right' && icon}
+    </StyledButton>
   )
 }
