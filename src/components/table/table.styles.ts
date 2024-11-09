@@ -25,6 +25,10 @@ export const tableHeaderStyles = cva({
   },
 })
 
+export const Container = styled('div', {
+  base: { height: '100%', overflowY: 'scroll' },
+})
+
 export const StyledTable = styled(Table, {
   base: { width: '100%' },
 })
